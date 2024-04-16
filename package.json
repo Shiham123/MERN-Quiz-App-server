@@ -1,0 +1,15 @@
+{
+  "name": "MERN-QuizApp-server",
+  "version": "1.0.0",
+  "description": "server site",
+  "main": "index.js",
+  "repository": "https://github.com/Shiham123/MERN-Quiz-App-server.git",
+  "author": "shiham",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0"
+  }
+}
