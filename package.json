@@ -1,5 +1,5 @@
 {
-	"name": "MERN-QuizApp-server",
+	"name": "mern-quiz-app",
 	"version": "1.0.0",
 	"description": "server site",
 	"main": "./app/index.js",
