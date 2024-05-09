@@ -2,13 +2,13 @@
 	"name": "mern-quiz-app",
 	"version": "1.0.0",
 	"description": "server site",
-	"main": "./app/index.js",
+	"main": "index.js",
 	"repository": "https://github.com/Shiham123/MERN-Quiz-App-server.git",
 	"author": "shiham",
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"dev": "nodemon ./app/index.js",
+		"dev": "nodemon index.js",
 		"lint": "eslint ."
 	},
 	"devDependencies": {

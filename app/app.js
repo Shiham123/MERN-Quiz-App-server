@@ -13,21 +13,12 @@ app.use(morgan("dev"))
 app.use(cors())
 app.use(express.json())
 
-/* eslint-disable-next-line no-undef */
-const port = process.env.PORT
-
 /** Routers */
 app.use("/api", router)
 
-app.get("/", (req, res) => {
-	try {
-		res.json("get request")
-	} catch (error) {
-		res.json(error)
-	}
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
+	res.status(500).send("Something went to go wrong")
 })
 
-app.listen(port, () => {
-	/* eslint-disable no-console */
-	console.log(`server running at http://localhost:${port}`)
-})
+module.exports = app
