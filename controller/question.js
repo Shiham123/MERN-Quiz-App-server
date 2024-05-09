@@ -6,4 +6,12 @@ const getAllQuestion = (req, res) => {
 	}
 }
 
-module.exports = {getAllQuestion}
+const postInsertQuestions = (req, res) => {
+	try {
+		return res.status(200).json({message: "insert the question"})
+	} catch (error) {
+		return res.status(400).json({message: error.message})
+	}
+}
+
+module.exports = {getAllQuestion, postInsertQuestions}

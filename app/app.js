@@ -1,7 +1,6 @@
 const express = require("express")
 const morgan = require("morgan")
 const cors = require("cors")
-require("dotenv").config()
 
 /** All router imported here */
 const router = require("../router/route")
