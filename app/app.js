@@ -16,7 +16,7 @@ app.use(express.json())
 /** Routers */
 app.use("/api", router)
 
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable-next-line no-unused-vars */
 app.use((err, req, res, next) => {
 	res.status(500).send("Something went to go wrong")
 })
