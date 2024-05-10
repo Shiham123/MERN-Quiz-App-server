@@ -1,24 +1,26 @@
+const {successResponse, errorResponse} = require("../handler/responseHandler")
+
 const getAllResult = (req, res) => {
 	try {
-		return res.status(200).json({message: "here we get all result"})
+		return successResponse(res, {statusCode: 201, message: "all questions", payload: {}})
 	} catch (error) {
-		return res.status(400).json({message: error.message})
+		return errorResponse(res, {statusCode: 400, message: "failed to get all question"})
 	}
 }
 
 const postAllResult = (req, res) => {
 	try {
-		return res.status(200).json({message: "posted all result"})
+		return successResponse(res, {statusCode: 201, message: "all questions", payload: {}})
 	} catch (error) {
-		return res.status(200).json({message: error.message})
+		return errorResponse(res, {statusCode: 400, message: "failed to get all question"})
 	}
 }
 
 const deleteResult = (req, res) => {
 	try {
-		return res.status(200).json({message: "delete result here"})
+		return successResponse(res, {statusCode: 201, message: "all questions", payload: {}})
 	} catch (error) {
-		return res.status(400).json({message: error.message})
+		return errorResponse(res, {statusCode: 400, message: "failed to get all question"})
 	}
 }
 
