@@ -2,7 +2,11 @@ const {Router} = require("express")
 const router = Router()
 
 /** imported controller */
-const {getAllQuestion, postInsertQuestions, deleteAllQuestion} = require("../controller/question")
+const {
+	getAllQuestion,
+	postInsertQuestions,
+	deleteAllQuestion,
+} = require("../controller/questionController")
 const {getAllResult, postAllResult, deleteResult} = require("../controller/resultController")
 
 /** question route */
