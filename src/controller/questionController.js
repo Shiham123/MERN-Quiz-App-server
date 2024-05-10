@@ -1,13 +1,15 @@
-const {successResponse} = require("../handler/responseHandler")
+const {successResponse, errorResponse} = require("../handler/responseHandler")
 const questionSchema = require("../models/questionSchema")
 
 const getAllQuestion = (req, res) => {
 	questionSchema
 		.find()
 		.then((data) => {
-			return successResponse(res, {statusCode: 201, message: "success", payload: data})
+			return successResponse(res, {statusCode: 201, message: "all questions", payload: data})
 		})
-		.catch((error) => res.status(400).json({message: error.message}))
+		.catch((error) => {
+			return errorResponse(res, {statusCode: 400, message: "failed to get all question"})
+		})
 }
 
 const postInsertQuestions = (req, res) => {
