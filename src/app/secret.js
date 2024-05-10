@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 require("dotenv").config()
 const portNumber = process.env.PORT || 5000
 

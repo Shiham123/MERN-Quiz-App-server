@@ -6,7 +6,7 @@ app.get("/", (req, res) => {
 	res.status(200).json({message: "server is running"})
 })
 
-/* eslint-disable no-console */
+/* eslint-disable no-console */ 
 mongodbConnection()
 	.then(() => {
 		try {
