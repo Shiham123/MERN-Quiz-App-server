@@ -8,7 +8,6 @@ export default [
 	{
 		rules: {
 			"no-var": ["error"],
-			"no-unused-vars": ["error"],
 			"no-undef": ["error"],
 			"no-console": ["error"],
 		},
