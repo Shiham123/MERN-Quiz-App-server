@@ -1,3 +1,9 @@
-const errorResponse = (res, {statusCode = 500, message = "default error message"}) => {}
+const errorResponse = (res, {statusCode = 500, message = "default error message"}) => {
+	return res.status(statusCode).json({success: false, message: message})
+}
 
-module.exports = {errorResponse}
+const successResponse = (res, {statusCode = 200, message = "success request", payload = {}}) => {
+	return res.status(statusCode).json({success: true, message: message, payload})
+}
+
+module.exports = {errorResponse, successResponse}

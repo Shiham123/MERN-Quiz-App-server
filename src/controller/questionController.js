@@ -1,10 +1,11 @@
+const {successResponse} = require("../handler/responseHandler")
 const questionSchema = require("../models/questionSchema")
 
 const getAllQuestion = (req, res) => {
 	questionSchema
 		.find()
 		.then((data) => {
-			res.status(200).json({data})
+			return successResponse(res, {statusCode: 201, message: "success", payload: data})
 		})
 		.catch((error) => res.status(400).json({message: error.message}))
 }

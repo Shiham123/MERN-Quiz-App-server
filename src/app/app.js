@@ -4,6 +4,7 @@ const cors = require("cors")
 
 /** All router imported here */
 const router = require("../router/route")
+const {errorResponse} = require("../handler/responseHandler")
 
 const app = express()
 
@@ -20,7 +21,7 @@ app.use((req, res, next) => {
 })
 
 app.use((err, req, res, next) => {
-	res.status(500).json({message: "Internal Server Error"})
+	return errorResponse(res, {statusCode: err.status, message: err.message})
 })
 
 module.exports = app
