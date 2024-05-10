@@ -7,7 +7,7 @@ const router = require("../router/route")
 
 const app = express()
 
-/** built in middleware */
+/** built-in middleware */
 app.use(morgan("dev"))
 app.use(cors())
 app.use(express.json())
@@ -17,7 +17,7 @@ app.use("/api", router)
 
 /* eslint-disable-next-line no-unused-vars */
 app.use((err, req, res, next) => {
-	res.status(500).send("Something went to go wrong")
+	res.status(500).json({message: "Internal Server Error"})
 })
 
 module.exports = app
