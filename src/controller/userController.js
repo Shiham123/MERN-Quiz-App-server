@@ -7,18 +7,29 @@ const postUserName = async (req, res) => {
 
 		if (!username) return errorResponse(res, {statusCode: 400, message: "Username not found"})
 
-		const existingUser = await userSchema.findOne({username})
-
-		if (existingUser) {
-			return errorResponse(res, {statusCode: 400, message: "Username already exists"})
-		} else {
-			const newUser = await userSchema.create({username})
-			return successResponse(res, {
-				statusCode: 200,
-				message: "Successfully created user",
-				payload: newUser,
+		userSchema
+			.findOne({username: username})
+			.then((exitingUser) => {
+				if (exitingUser) {
+					return errorResponse(res, {statusCode: 300, message: "user exits in database"})
+				} else {
+					return userSchema
+						.create({username})
+						.then((newUser) => {
+							return successResponse(res, {
+								statusCode: 200,
+								message: "User created successfully",
+								payload: newUser,
+							})
+						})
+						.catch(() => {
+							return errorResponse(res, {statusCode: 400, message: "unable to create user"})
+						})
+				}
 			})
-		}
+			.catch((error) => {
+				return errorResponse(res, {statusCode: 400, message: error.message})
+			})
 	} catch (error) {
 		return errorResponse(res, {statusCode: 400, message: error.message})
 	}
