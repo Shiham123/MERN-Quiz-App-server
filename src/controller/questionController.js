@@ -8,7 +8,7 @@ const getAllQuestion = (req, res) => {
 			return successResponse(res, {statusCode: 201, message: "all questions", payload: data})
 		})
 		.catch((error) => {
-			return errorResponse(res, {statusCode: 400, message: "failed to get all question"})
+			return errorResponse(res, {statusCode: 400, message: error.message})
 		})
 }
 

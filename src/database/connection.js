@@ -1,9 +1,9 @@
 const mongoose = require("mongoose")
-const {mongodbURL} = require("../app/secret")
+const {mongodbLocalUrl} = require("../app/secret")
 
 const mongodbConnection = async () => {
 	try {
-		await mongoose.connect(mongodbURL)
+		await mongoose.connect(mongodbLocalUrl)
 		/* eslint-disable no-console */
 		console.log("Database connected")
 	} catch (error) {
