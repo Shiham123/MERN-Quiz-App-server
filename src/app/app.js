@@ -16,6 +16,14 @@ app.use(express.json())
 /** Routers */
 app.use("/api", router)
 
+app.get("/", (req, res) => {
+	res.status(200).json({message: "server is running"})
+})
+
+app.get("/api", (req, res) => {
+	res.status(200).json({message: "route is running"})
+})
+
 app.use((req, res, next) => {
 	res.status(404).json({message: "route not found"})
 })
