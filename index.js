@@ -2,8 +2,6 @@ const app = require("./src/app/app")
 const {portNumber} = require("./src/app/secret")
 const {mongodbConnection} = require("./src/database/connection")
 
-
-
 /* eslint-disable no-console */
 mongodbConnection()
 	.then(() => {

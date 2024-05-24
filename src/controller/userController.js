@@ -3,7 +3,7 @@ const userSchema = require("../models/userSchema")
 
 const postUserName = async (req, res) => {
 	try {
-		const {username, status} = req.body
+		const {username} = req.body
 
 		if (!username) return errorResponse(res, {statusCode: 400, message: "Username not found"})
 
@@ -14,7 +14,7 @@ const postUserName = async (req, res) => {
 					return errorResponse(res, {statusCode: 300, message: "user exits in database"})
 				} else {
 					return userSchema
-						.create({username, status})
+						.create({username, status: "fulfilled"})
 						.then((newUser) => {
 							return successResponse(res, {
 								statusCode: 200,
